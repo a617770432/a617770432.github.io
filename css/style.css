@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family:  -apple-system, SF UI Text, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, Helvetica Neue, Helvetica, Arial, sans-serif;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	font-size: 100vw
+}
+body {
+	line-height: 1;
+	width: 100vw;
+	height: 100vh;
+	background-color: #222;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.flex{
+	display: flex;
+	align-items: center;
+}
+.flex-direction {
+	flex-direction: column;
+}
+.justify-center{
+	justify-content: center;
+}
+.justify-around{
+	justify-content: space-around;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.align-items {
+	align-items: center
+}
+.text-orange {
+	color: #ff8a00
+}
+.bg-orange{
+	background-color: #ff8a00
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	line-height: 2;
+	font-size: .85vw;
+	color: #fff;
+}
+.fullscreen-bg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	background-size: cover;
+}
+.header{
+	width: 100vw;
+	height: 6vw;
+	padding: 0 4vw;
+	min-height: 6vw;
+	font-size: .7vw;
+}
+.header .logo{
+	display: flex;
+	justify-content: space-around;
+}
+.header .dark-logo {
+	width: 119px;
+	height: 45px;
+}
+.header .navigation-bar {
+	margin-right: 5vw;
+	justify-content: space-around;
+}
+.header .navigation-item {
+	padding:0 1vw;
+}
+.header .navigation-item>a{
+	position: relative;
+}
+.header .navigation-item>a::before{
+	position: absolute;
+	bottom: -10px;
+	visibility: hidden;
+	content: "";
+	width: 100%;
+	height: 2px;
+	/* background-color: hsla(0, 0%, 100%, .5); */
+	background-color:#ff8a00;
+	transform: translateX(-100%);
+	border-radius: 2px;
+	opacity: 0;
+}
+
+.header .navigation-item>a.active {
+	color: #ff8a00;
+}
+
+.header .navigation-item>a.active::before{
+	visibility: visible;
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.footer {
+	text-align: center;
+}
+.footer .navigation-item {
+	padding: 5px;
+	width: 7vw;
+}
+.footer .navigation-item>a{
+	position: relative;
+}
+.footer .navigation-item>a::before{
+	position: absolute;
+	bottom: -10px;
+	visibility: hidden;
+	content: "";
+	width: 100%;
+	height: 2px;
+	/* background-color: hsla(0, 0%, 100%, .5); */
+	background-color:#ff8a00;
+	
+	transform: translateX(-100%);
+	border-radius: 2px;
+	opacity: 0;
+}
+.footer .navigation-item>a.active {
+	color: #ff8a00;
+}
+.footer .navigation-item>a.active::before{
+	visibility: visible;
+	transform: translateX(0);
+	opacity: 1;
+}
+.footer .bottom{
+	padding: 1vw ;
+	color: #999;
+}
+
+@media only screen and (max-width:1024px) {
+	.header {
+		padding: 0 6vw;
+		min-height: 16vw;
+		font-size: 1.5vw;
+
+	}
+	.header .dark-logo {
+		width: 100px;
+		height: 38px;
+	}
+	.footer .navigation-item {
+		padding: 5px;
+		width: auto;
+		font-size: 1.5vw;
+	}
+	.footer .navigation-bar{
+		flex-wrap: wrap;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	.header .dark-logo {
+		width: 80px;
+		height: 30px;
+	}
+}
+@media only screen and (max-width: 374px) {
+	.header .dark-logo {
+		width: 60px;
+		height: 22px;
+	}
+	.header {
+		padding: 0 2vw;
+		min-height: 20vw;
+	}
+}
